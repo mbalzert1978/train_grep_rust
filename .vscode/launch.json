@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'train_grep'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=train_grep",
+                    "--package=train_grep"
+                ],
+                "filter": {
+                    "name": "train_grep",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+                "poem.txt",
+                "Sonne"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'train_grep'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=train_grep",
+                    "--package=train_grep"
+                ],
+                "filter": {
+                    "name": "train_grep",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
